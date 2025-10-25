@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../general.css">
+    <title>بطاقة مشروع</title>
+    <style>
+        :root {
+            --progress-blue: #00447D; /* A nice standard blue */
+        }
+        .circular-progress {
+            position: relative;
+            height: clamp(140px, 3vw, 150px); /* Outer diameter */
+            width: clamp(140px, 3vw, 150px);
+            border-radius: 50%;
+            /* Initial state for 50% fill, now with blue: */
+            background: conic-gradient(
+            var(--progress-blue) 180deg,  /* Blue fill (50% of 360deg is 180deg) */
+            #e0e0e0 0deg      /* Gray empty part */
+            );
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: clamp(100px, 2vw, 110px);
+            width: clamp(100px, 2vw, 110px);
+            background-color: white; 
+            border-radius: 50%;
+            
+            /* Text styling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em; 
+            font-weight: bold;
+            color: var(--progress-blue); 
+        }
+        .section1 {
+            display: flex;
+            gap: 10px;
+            width: auto;
+            flex-wrap: wrap;
+            min-height: 155px;
+            height: auto;
+            font-weight: 700; 
+        } 
+        .card_1, .card_2, .card_3, .card_4, .card_5 {
+            display: inline-flex; 
+            flex-direction: column; 
+            min-width: 50%;
+            flex: 1 1 calc(20% - 8px); 
+            width: auto; 
+            min-width: 100px; 
+            box-sizing: border-box; 
+            max-width: calc(100% / 5 - 8px); 
+            padding: 10px 15px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .card_5 {
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-width: 850px) {
+            .card_1, .card_2, .card_3 {
+                flex: 1 1 calc((100% / 3) - 7px);
+                max-width: calc((100% / 3) - 7px);
+            }
+            .card_4, .card_5, .card_7, .card_8, .card_9, .card_10 {
+                flex: 1 1 calc(50% - 5px);
+                max-width: calc(50% - 5px);
+            }
+            .card_18 .section-content li, .card_19 .section-content li {
+                flex: 1 1 100%; 
+                max-width: 100%; 
+                margin-bottom: 10px; 
+                position: relative; 
+                padding-right: 15px; 
+            }
+            .card_17 .section-content li{
+                flex: 1 1 100%; 
+                max-width: 100%; 
+                margin-bottom: 10px; 
+                position: relative; 
+            }
+        }
+        @media (max-width: 550px) {
+            .card_1, .card_2, .card_3, .card_4, .card_21, .card_22 {
+                flex: 1 1 calc(50% - 5px);
+                max-width: calc(50% - 5px);
+            }
+            .card_5, .card_23 {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 400px) {
+            .card_1, .card_2, .card_3, .card_4,.card_5, .card_6, .card_7, 
+            .card_8, .card_9, .card_10, .card_11, .card_12, .card_13,
+            .card_14, .card_15, .card_16, .card_17, .card_18, .card_19,
+            .card_20, .card_21, .card_22, .card_23{
+                flex: 1 1 100%;
+                max-width: 100%;
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+        <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" fill="none">
+            <path d="M12 5.33332L19.8382 13.1716C21.4003 14.7337 21.4003 17.2663 19.8382 18.8284L12 26.6667" stroke="#00447D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>        
+        <span class="title">اسم المشروع (نوع المشروع (داخلي خارجي))</span>
+        <span class="code">INI18-PRO03</span>
+    </div>
+    <div class="card-content">
+      <div class="section section1">
+        <div class="card_1">
+            <div class="section-title" style="color:#232323;">25/08/2025</div>
+            <div class="section-content">تاريخ البدء المتوقع​</div>
+        </div>
+        <div class="card_2">
+            <div class="section-title" style="color: #76A488;">25/09/2025</div>
+            <div class="section-content">تاريخ الانتهاء المتوقع​</div>
+        </div>
+        <div class="card_3">
+            <div class="section-title" style="color:#232323;">5 أسابيع</div>
+            <div class="section-content">المدة الزمنية</div>
+        </div>
+        <div class="card_4">
+            <div class="section-title" style="color: #FDEF59;">100,000$</div>
+            <div class="section-content">الكلفة التقديرية</div>
+        </div>
+        <div class="card_5">
+            <div class="circular-progress">
+                <div class="inner-circle">75%</div>
+            </div>
+            <script>
+                function updateCircularProgress(percentage) {
+                    percentage = Math.min(100, Math.max(0, percentage)); 
+
+                    const progressCircle = document.querySelector('.circular-progress');
+                    const innerText = document.querySelector('.inner-circle');
+                    const degrees = percentage * 3.6;
+                    const blueColor = getComputedStyle(document.documentElement).getPropertyValue('--progress-blue').trim();
+
+                    progressCircle.style.background = `conic-gradient(
+                    ${blueColor} ${degrees}deg, 
+                    #e0e0e0 ${degrees}deg 
+                    )`;
+                }
+                updateCircularProgress(document.querySelector('.inner-circle').textContent.replace('%', ''));
+            </script>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_6">
+            <div class="section-title">نبذة عن المشروع:</div>
+            <div class="section-content"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_7">
+            <div class="section-title">الجهة المسؤولة عن المشروع:</div>
+            <div class="section-content">المجلس البلدي</div>
+        </div>
+        <div class="card_8">
+            <div class="section-title">العضو المنتدب:</div>
+            <div class="section-content">رئيس المجلس البلدي</div>
+        </div>
+        <div class="card_9">
+            <div class="section-title">الجهة المنفذة:</div>
+            <div class="section-content">شركة انتليجايل (Intelligile)</div>
+        </div>
+        <div class="card_10">
+            <div class="section-title">آلية التمويل:​</div>
+            <div class="section-content">هبة عينية مشروطة بتمويل جزئي</div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_11">
+            <div class="section-title">الجهة الممولة:</div>
+            <div class="section-content">صندوق شركة انتليجايل و أصدقاء طرابلس</div>
+        </div>
+        <div class="card_12">
+            <div class="section-title">الجهات المعنية:</div>
+            <div class="section-content">المجلس البلدي، الجهاز الإداري للبلدية، المجتمع الأهلي، التجار، المواطنين، المؤسسات الخاصة والشبه حكومية الجهات الحكومية ذات الصلة</div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_13">
+            <div class="section-title">وصف نطاق المشروع:</div>
+            <div class="section-content">عداد خطة استراتيجية مرنة ومتكاملة لبلدية طرابلس تشمل خطة تكتيكية عاجلة لعام 2025 وخطة استراتيجية متوسطة المدى لعام 2026، بالإضافة إلى بطاقات المشاريع والبوابة الرقمية التفاعلية.</div>
+        </div>
+        <div class="card_14">
+            <div class="section-title">الأثر المرجو:</div>
+            <div class="section-content">تعزيز ثقة المجتمع المحلي بالبلدية، وتحسين فعالية الحوكمة، وترسيخ نهج استراتيجي مستدام للتنمية المحلية.</div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_15">
+            <div class="section-title">أنشطة المشروع:</div>
+            <div class="section-content">
+                <ol>
+                    <li>عقد الورش التفاعلية مع المجلس البلدي وأصحاب المصلحة</li>
+                    <li>إعداد الخطة التكتيكية (2025)</li>
+                    <li>إعداد الخطة الاستراتيجية (2026)</li>
+                    <li>تحديد المبادرات والمشاريع مع مؤشرات الأداء (KPIs) وعوامل النجاح (CSFs)</li>
+                    <li>تصميم بوابة إلكترونية تفاعلية</li>
+                    <li>إعداد تقرير ختامي وتوثيق الدروس المستفادة</li>
+                </ol>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_16">
+            <div class="section-title">الفجوات التي سيتم معالجتها:</div>
+            <div class="section-content">ضعف الحوكمة البلدية، غياب التخطيط الاستراتيجي، ضعف التنسيق مع المجتمع الأهلي، غياب التحول الرقمي، وانخفاض ثقة المواطنين بالبلدية.</div>
+        </div>
+        <div class="card_17">
+            <div class="section-title">المخرجات المتوقعة:</div>
+            <div class="section-content">
+                <ol>
+                    <li>خطة تكتيكية (2025) </li>
+                    <li>خطة استراتيجية (2026)</li>
+                    <li>بطاقات المشاريع والمبادرات</li>
+                    <li>بوابة إلكترونية تفاعلية</li>
+                    <li>تقرير ختامي موثق</li>
+                </ol>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_18">
+            <div class="section-title">مؤشرات الأداء:</div>
+            <div class="section-content">
+                <ul>
+                    <li>عدد الورش المنفذة</li>
+                    <li>نسبة مشاركة أصحاب المصلحة</li>
+                    <li>اعتماد الخطة من المجلس البلدي</li>
+                    <li>جاهزية البوابة الإلكترونية</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card_19">
+            <div class="section-title">عوامل النجاح:</div>
+            <div class="section-content">
+                <ul>
+                    <li>التزام المجلس البلدي وأصحاب المصلحة بالمشاركة الفعالة </li>
+                    <li>وضوح الأدوار والمسؤوليات</li>
+                    <li>فعالية التواصل والحوكمة</li>
+                    <li>دعم القيادة البلدية للمشروع</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_20">
+            <div class="section-title">المخاطر:</div>
+            <div class="section-content">
+                <ol>
+                    <li>ضعف مشاركة أصحاب المصلحة</li>
+                    <li>مقاومة داخلية للتغيير</li>
+                    <li>عدم الالتزام بالحضور في الورش</li>
+                </ol>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card_21">
+            <div class="section-title">الأولويات الاستراتيجية المرتبطة​</div>
+            <div class="section-content">
+                <ul>
+                    <li>امتثال وحوكمة قوية</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card_22">
+            <div class="section-title">الاعتمادية على مشاريع اخرى​</div>
+            <div class="section-content">لا يعتمد على مشاريع أخرى مباشرة، لكنه يمهد لإطلاق برامج ومشاريع تطويرية لاحقة.</div>
+        </div>
+        <div class="card_23">
+            <div class="section-title">المبادرات المرتبطة​</div>
+            <div class="section-content">مبادرة بلدية تخطط</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

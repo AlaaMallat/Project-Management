@@ -1,0 +1,117 @@
+.card {
+  margin: 20px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: nowrap;
+}
+.chevron-icon {
+  width: clamp(20px, 3vw, 32px);
+  height: clamp(20px, 3vw, 32px);
+  flex-shrink: 0;
+  flex-grow: 0;
+  aspect-ratio: 1/1;
+  min-width: 24px;
+  min-height: 24px
+}
+.title{
+  color: #00447D;
+  font-size: clamp(18px, 4vw, 32px);
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+.code{
+  color: #00447D;
+  font-size: clamp(12px, 3vw, 24px);
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+  margin-right: auto;
+}
+.card-content {
+  padding: 70px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.section {
+  display: flex;              
+  gap: 10px;                  
+  width: auto;
+  flex-wrap: wrap;
+  min-height: 195px;
+  height: auto;
+  min-height: 161px;
+}
+.card_1, .card_2,
+.card_9, .card_10,
+.card_11, .card_12,
+.card_13, .card_14 {
+  display: inline-flex;         
+  flex-direction: column; 
+  min-width: 50%;
+  flex: 1 1 calc(50% - 5px);
+  width: auto;                
+  min-width: 10px;       
+  box-sizing: border-box;      
+  max-width: calc(50% - 5px);          
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.card_3, .card_4, .card_5,
+.card_6, .card_7, .card_8 {
+  display: inline-flex;         
+  flex-direction: column; 
+  min-width: 50%;
+  flex: 1 1 calc((100%/3) - 7px);
+  width: auto;                
+  min-width: 10px;       
+  box-sizing: border-box;      
+  max-width: calc((100%/3) - 7px);          
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.section-title {
+  margin-bottom: 5px;
+  color: #9D9D9D;
+  text-align: right;
+  font-family: "Lama Sans";
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 600;
+  line-height: normal;
+}
+.section-content {
+  overflow: wrap;
+  width: auto;
+  word-wrap: break-word;      
+  overflow-wrap: break-word;   
+  white-space: normal;
+  color: #232323;
+  text-align: right;
+  font-size: clamp(12px, 2vw, 20px);
+  font-style: normal;
+  font-weight: 600;
+  padding: 10px;
+  line-height: normal;
+}
+@media (max-width: 400px) {
+  .section {
+    flex-direction: column; 
+  }
+  .card_1, .card_2, 
+  .card_3, .card_4, .card_5, 
+  .card_6, .card_7, .card_8 {
+    flex: 1 1 100%;             
+    max-width: 100%;
+  }
+}

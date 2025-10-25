@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Lama Sans';
+  src: url('../fonts/Lama_Sans/LamaSans-Regular.woff2') format('woff2'),
+       url('../fonts/Lama_Sans/LamaSans-Regular.woff') format('woff'),
+       url('../fonts/Lama_Sans/LamaSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lama Sans';
+  src: url('../fonts/Lama_Sans/LamaSans-Bold.woff2') format('woff2'),
+       url('../fonts/Lama_Sans/LamaSans-Bold.woff') format('woff'),
+       url('../fonts/Lama_Sans/LamaSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 10px;
+    background-color: #F2F2F2;
+    height: 100vh;
+    font-family: "Lama Sans", Arial, sans-serif;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../general.css">
+  <title>بطاقة الهدف الاستراتيجي</title>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+        <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+            <path d="M12 5.33332L19.8382 13.1716C21.4003 14.7337 21.4003 17.2663 19.8382 18.8284L12 26.6667" stroke="#00447D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>        
+        <span class="title">اسم الهدف الاستراتيجي</span>
+        <span class="code">رمز الهدف الاستراتيجي</span>
+    </div>
+    <div class="card-content">
+      <div class="section">
+        <div class="section-title">المحور الاستراتيجي المرتبط</div>
+        <div class="section-content"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">المبادرات المرتبطة</div>
+        <div class="section-content"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">البرامج المرتبطة</div>
+        <div class="section-content"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">المشاريع المرتبطة</div>
+        <div class="section-content"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">الأنشطة المرتبطة</div>
+        <div class="section-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const cardHeader = document.querySelector(".card-header");
+    const card = document.querySelector(".card");
+    cardHeader.addEventListener("click", () => {
+      card.classList.toggle("active");
+    });
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => {
+      section.addEventListener("click", () => {
+        section.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
