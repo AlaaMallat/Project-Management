@@ -3,13 +3,10 @@
 }
 .framework-container {
     width: 100%;
-    margin: 0;
 }
 .framework-header {
     background-color: var(--primary-blue);
     color: white;
-    padding: 10px;
-    margin: 0;
     align-items: center;
     height: 100px;
     margin-bottom: 40px; 
@@ -23,19 +20,30 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 10px;
+    padding: 30px;
 }
 .title-group, .content {
     display: flex;
     gap: 10px; 
 }
-.core-values-grid {
+.first-line {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-bottom: 40px;
     padding: 10px;
-    justify-content: center;
+}
+.second-line {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 40px;
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.second-line .value-card{
+    width: 328px;
 }
 .value-card {
     margin: 0; 
