@@ -10,31 +10,32 @@
 <style>
     .circular-progress {
         position: relative;
-        height: clamp(140px, 3vw, 150px); 
-        width: clamp(140px, 3vw, 150px);
         border-radius: 50%;
         background: conic-gradient(
-            var(--progress-brown) 180deg, #e0e0e0 0deg      
+            var(--progress-brown) 180deg, 
+            #e0e0e0 0deg      
         );
+        width: clamp(140px, 3vw, 150px);
+        height: clamp(140px, 3vw, 150px); 
     }
     .inner-circle {
-        position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        height: clamp(100px, 2vw, 110px);
-        width: clamp(100px, 2vw, 110px);
-        background-color: white; 
-        border-radius: 50%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 32px;
+        font-weight: 600;
         color: #AF8E32;
         text-align: right;
-        font-size: 32px;
         font-style: normal;
-        font-weight: 600;
+        border-radius: 50%;
+        position: absolute;
         line-height: normal;
+        align-items: center;
+        justify-content: center;
+        width: clamp(100px, 2vw, 110px);
+        transform: translate(-50%, -50%);
+        height: clamp(100px, 2vw, 110px);
+        background-color: var(--background); 
     }
 </style>
 <body>
@@ -44,7 +45,7 @@
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                 <path d="M12 5.33332L19.8382 13.1716C21.4003 14.7337 21.4003 17.2663 19.8382 18.8284L12 26.6667" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>   
-            <div class="title">خدمة المواطن</div>
+            <div class="title" style="color: var(--background)">خدمة المواطن</div>
         </div>
     </header>
 
@@ -105,11 +106,11 @@
 
     <section class="category-status-list" id="status-internal">
         <div class="grid-section">
-            <div class="card_1" style="color: #232323; border: 2px solid #00447D;">
+            <div class="card_1" style="color: var(--dark-gray); border: 2px solid var(--primary-blue);">
                 <span class="status-number">23</span>
                 <span class="status-text" style="font-weight: 600;">عدد المشاريع</span>
             </div>
-            <div class="card_5" style="color: #00447D;">
+            <div class="card_5" style="color: var(--primary-blue);">
                 <span class="status-number">8</span>
                 <span class="status-text">مشاريع قيد التنفيذ</span>
             </div>
@@ -117,15 +118,15 @@
                 <span class="status-number">1</span>
                 <span class="status-text">مشاريع مكتملة</span>
             </div>
-            <div class="card_8" style="color: #232323;">
+            <div class="card_8" style="color: var(--dark-gray);">
                 <span class="status-number">7</span>
                 <span class="status-text">مشاريع مخطط لها</span>
             </div>
-            <div class="card_7" style="color: #232323;">
+            <div class="card_7" style="color: var(--dark-gray);">
                 <span class="status-number">4</span>
                 <span class="status-text">مشاريع مطروحة</span>
             </div>
-            <div class="card_3" style="color: #232323;">
+            <div class="card_3" style="color: var(--dark-gray);">
                 <span class="status-number">1</span>
                 <span class="status-text">مشاريع قيد الاعتماد</span>
             </div>
@@ -271,7 +272,7 @@
                                             const degrees = percentage * 3.6;
                                             const blueColor = getComputedStyle(document.documentElement)
                                             .getPropertyValue('--progress-brown')
-                                            .trim() || '#AF8E32'; // fallback color
+                                            .trim() || '#AF8E32'; 
 
                                             progressCircle.style.background = `conic-gradient(
                                             ${blueColor} ${degrees}deg, 
@@ -433,7 +434,6 @@
                 function scrollToTarget(targetId) {
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
-                        // إضافة منطق إظهار المحتوى المخفي (مثل فتح الأكورديون)
                         if (targetElement.classList.contains('accordion-header')) {
                             const accordionItem = targetElement.closest('.accordion-item');
                             accordionItem.classList.add('open');

@@ -7,65 +7,58 @@
     <link rel="stylesheet" href="../general.css">
     <title>بطاقة مشروع</title>
     <style>
-        :root {
-            --progress-blue: #00447D; /* A nice standard blue */
-        }
         .circular-progress {
             position: relative;
-            height: clamp(140px, 3vw, 150px); /* Outer diameter */
-            width: clamp(140px, 3vw, 150px);
             border-radius: 50%;
-            /* Initial state for 50% fill, now with blue: */
             background: conic-gradient(
-            var(--progress-blue) 180deg,  /* Blue fill (50% of 360deg is 180deg) */
-            #e0e0e0 0deg      /* Gray empty part */
+                var(--primary-blue) 180deg,  
+                #e0e0e0 0deg     
             );
+            width: clamp(140px, 3vw, 150px);
+            height: clamp(140px, 3vw, 150px); 
         }
         .inner-circle {
-            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            height: clamp(100px, 2vw, 110px);
-            width: clamp(100px, 2vw, 110px);
-            background-color: white; 
-            border-radius: 50%;
-            
-            /* Text styling */
             display: flex;
-            justify-content: center;
-            align-items: center;
             font-size: 1.5em; 
             font-weight: bold;
-            color: var(--progress-blue); 
+            position: absolute;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue); 
+            width: clamp(100px, 2vw, 110px);
+            transform: translate(-50%, -50%);
+            height: clamp(100px, 2vw, 110px);
+            background-color: var(--background); 
         }
         .section1 {
-            display: flex;
             gap: 10px;
             width: auto;
-            flex-wrap: wrap;
-            min-height: 155px;
             height: auto;
+            display: flex;
+            flex-wrap: wrap;
             font-weight: 700; 
+            min-height: 155px;
         } 
         .card_1, .card_2, .card_3, .card_4, .card_5 {
+            width: auto; 
+            min-width: 50%;
+            min-width: 100px;
+            padding: 10px 15px;
+            border-radius: 20px;
             display: inline-flex; 
             flex-direction: column; 
-            min-width: 50%;
-            flex: 1 1 calc(20% - 8px); 
-            width: auto; 
-            min-width: 100px; 
             box-sizing: border-box; 
+            flex: 1 1 calc(20% - 8px); 
+            box-shadow: var(--box-shadow);
             max-width: calc(100% / 5 - 8px); 
-            padding: 10px 15px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            background-color: var(--background);
         }
         .card_5 {
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
         @media (max-width: 850px) {
             .card_1, .card_2, .card_3 {
@@ -79,15 +72,15 @@
             .card_18 .section-content li, .card_19 .section-content li {
                 flex: 1 1 100%; 
                 max-width: 100%; 
-                margin-bottom: 10px; 
                 position: relative; 
+                margin-bottom: 10px; 
                 padding-right: 15px; 
             }
             .card_17 .section-content li{
                 flex: 1 1 100%; 
                 max-width: 100%; 
-                margin-bottom: 10px; 
                 position: relative; 
+                margin-bottom: 10px; 
             }
         }
         @media (max-width: 550px) {
@@ -115,29 +108,33 @@
 <body>
   <div class="card">
     <div class="card-header">
-        <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" fill="none">
-            <path d="M12 5.33332L19.8382 13.1716C21.4003 14.7337 21.4003 17.2663 19.8382 18.8284L12 26.6667" stroke="#00447D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>        
-        <span class="title">اسم المشروع (نوع المشروع (داخلي خارجي))</span>
+        <div>
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" fill="none">
+                <path d="M12 5.33332L19.8382 13.1716C21.4003 14.7337 21.4003 17.2663 19.8382 18.8284L12 26.6667" stroke="#00447D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>        
+            <span class="title">اسم المشروع 
+                <span style="color: var(--medium-gray);">(داخلي أو خارجي)</span>
+            </span>
+        </div>
         <span class="code">INI18-PRO03</span>
     </div>
     <div class="card-content">
       <div class="section section1">
         <div class="card_1">
-            <div class="section-title" style="color:#232323;">25/08/2025</div>
-            <div class="section-content">تاريخ البدء المتوقع​</div>
+            <div class="top-section-content" style="color:#232323;">25/08/2025</div>
+            <div class="top-section-title">تاريخ البدء المتوقع​</div>
         </div>
         <div class="card_2">
-            <div class="section-title" style="color: #76A488;">25/09/2025</div>
-            <div class="section-content">تاريخ الانتهاء المتوقع​</div>
+            <div class="top-section-content" style="color: #76A488;">25/09/2025</div>
+            <div class="top-section-title">تاريخ الانتهاء المتوقع​</div>
         </div>
         <div class="card_3">
-            <div class="section-title" style="color:#232323;">5 أسابيع</div>
-            <div class="section-content">المدة الزمنية</div>
+            <div class="top-section-content" style="color:#232323;">5 أسابيع</div>
+            <div class="top-section-title">المدة الزمنية</div>
         </div>
         <div class="card_4">
-            <div class="section-title" style="color: #FDEF59;">100,000$</div>
-            <div class="section-content">الكلفة التقديرية</div>
+            <div class="top-section-content" style="color: #FDEF59;">100,000$</div>
+            <div class="top-section-title">الكلفة التقديرية</div>
         </div>
         <div class="card_5">
             <div class="circular-progress">
@@ -150,7 +147,7 @@
                     const progressCircle = document.querySelector('.circular-progress');
                     const innerText = document.querySelector('.inner-circle');
                     const degrees = percentage * 3.6;
-                    const blueColor = getComputedStyle(document.documentElement).getPropertyValue('--progress-blue').trim();
+                    const blueColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-blue').trim();
 
                     progressCircle.style.background = `conic-gradient(
                     ${blueColor} ${degrees}deg, 

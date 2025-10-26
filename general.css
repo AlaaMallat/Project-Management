@@ -15,10 +15,34 @@
   font-style: normal;
 }
 body {
-    width: auto;
-    height: auto;
-    margin: 0;
-    background-color: #F2F2F2;
-    height: 100vh;
-    font-family: "Lama Sans", Arial, sans-serif;
+  margin: 0;
+  width: auto;
+  height: auto;
+  height: 100vh;
+  background-color: #F2F2F2;
+  font-family: "Lama Sans", Arial, sans-serif;
+}
+:root{
+  --background: #fff;
+  --dark-gray: #232323;
+  --border-radius-xl: 20px;
+  --medium-gray: #9D9D9D;
+  --primary-blue: #00447D;
+  --box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  --chevron-icon-width-height: clamp(20px, 3vw, 32px);
+}
+.title{
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+  color: var(--primary-blue);
+  font-size: clamp(24px, 4vw, 32px);
+}
+.code{
+  font-weight: 600;
+  margin-right: auto;
+  line-height: normal;
+  white-space: nowrap;
+  color: var(--primary-blue);
+  font-size: clamp(14px, 3vw, 24px);
 }
