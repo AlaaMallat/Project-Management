@@ -37,7 +37,7 @@
   min-width: 100%;
   padding: 10px 15px;
   border-radius: 20px;
-  display: inline-flex;         
+  display: flex;         
   box-sizing: border-box;      
   flex-direction: column; 
   box-shadow: var(--box-shadow);
@@ -46,10 +46,10 @@
 .card_7, .card_8, .card_9, .card_10 {
   width: auto;   
   min-width: 50px;
-  min-width: 10px;       
+  min-height: 116px;
   padding: 10px 15px;
   border-radius: 20px;
-  display: inline-flex;         
+  display: flex;         
   box-sizing: border-box;      
   flex-direction: column; 
   box-shadow: var(--box-shadow);
@@ -62,11 +62,11 @@
 .card_16, .card_17,
 .card_18, .card_19 {
   width: auto;   
-  min-width: 50%;
-  min-width: 10px;       
+  min-width: 592px;
+  min-height: 116px;
   padding: 10px 15px;
   border-radius: 20px;
-  display: inline-flex;         
+  display: flex;         
   box-sizing: border-box;  
   flex-direction: column; 
   flex: 1 1 calc(50% - 5px);
@@ -76,7 +76,7 @@
 }
 .card_21, .card_22, .card_23 {
   width: auto;                
-  min-width: 50%;
+  min-width: 592px;
   min-width: 10px;       
   padding: 10px 15px;
   border-radius: 20px;
@@ -93,15 +93,17 @@
   line-height: 40px;
   text-align: right;
   font-style: normal;
+  padding: 30px 20px 20px;
   font-size: clamp(14px, 3vw, 32px);
 }
 .top-section-title{
+  font-size: 20px;
   font-weight: 700;
   line-height: 40px;
   text-align: right;
   font-style: normal;
+  padding-right: 20px;
   color: var(--medium-gray);
-  font-size: clamp(12px, 3vw, 20px);
 }
 .section-title {
   padding: 5px;
@@ -110,7 +112,7 @@
   margin-bottom: 5px;
   line-height: normal;
   color: var(--medium-gray);
-  font-size: clamp(16px, 3vw, 24px);
+  font-size: clamp(12px, 3vw, 24px);
 }
 .section-content {
   width: auto;
@@ -176,23 +178,4 @@ li{
 .section1 .section-content{
     color: var(--medium-gray);
     font-size: clamp(10px, 2vw, 20px); 
-}
-@media (max-width: 768px) {
-  .code {
-    order: 2;
-    width: 95%;
-    margin-top: 15px;
-    text-align: right; 
-    align-items: right;
-    padding-right: 28px;
-  }
-  .card-content {
-    padding-top: 30px;
-    padding-bottom: 20px;
-  }
-  .card-header {
-    flex-direction: column;
-    padding: 10px 10px 0 0;
-    align-items: flex-start;
-  }
 }
