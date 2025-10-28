@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خدمة المواطن</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <style>
-    .circular-progress {
+    #citizen-service .circular-progress {
         position: relative;
         border-radius: 50%;
         background: conic-gradient(
             var(--progress-brown) 180deg, 
             #e0e0e0 0deg      
         );
-        width: clamp(140px, 3vw, 150px);
-        height: clamp(140px, 3vw, 150px); 
+        width: 150px;
+        height: 150px; 
     }
-    .inner-circle {
+    #citizen-service .inner-circle {
         top: 50%;
         left: 50%;
         display: flex;
-        font-size: 32px;
+        font-size: clamp(16px, 3vw, 32px);
         font-weight: 600;
         color: #AF8E32;
         text-align: right;
@@ -32,13 +31,98 @@
         line-height: normal;
         align-items: center;
         justify-content: center;
-        width: clamp(100px, 2vw, 110px);
+        width: 110px;
         transform: translate(-50%, -50%);
-        height: clamp(100px, 2vw, 110px);
+        height: 110px;
         background-color: var(--background); 
+    }
+    @media (max-width: 768px) {
+        #citizen-service .search-container{
+            width: 92%;
+            margin: 0 10px 0 10px;
+        }
+        #citizen-service .search-icon {
+            top: 22%;
+            right: 3rem;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            pointer-events: none;
+            transform: translateY(-50%);
+            transform: translateX(150%);
+        }
+        #citizen-service .card-header{
+            margin-bottom: 15px;
+        }
+        #citizen-service .status-number{
+            padding-right: 10px;
+        }
+        #citizen-service .card_1, #citizen-service .card_2, #citizen-service .card_3,
+        #citizen-service .card_4, #citizen-service .card_5, #citizen-service .card_6,
+        #citizen-service .card_7, #citizen-service .card_8, #citizen-service .card_9 {
+            margin: 0;
+            width: auto;                
+            padding: 5px 10px;
+            min-width: 50%;
+            min-width: 10px;       
+            border-radius: 50px;
+            display: inline-flex;         
+            box-sizing: border-box;
+            flex-direction: column; 
+            box-shadow: var(--box-shadow);
+            flex: 1 1 calc((100%/3) - 3.5px);
+            max-width: calc((100%/3) - 3.5px);          
+            background-color: var(--background);
+        }
+        #citizen-service .category-status-list{
+            margin: 5px;
+        }
+        #citizen-service .grid-section{
+            gap: 5px;
+            margin: 15px 5px 0 5px;
+        }
+        #citizen-service .brief-description{
+            margin: 40px 10px;
+        }
+        #citizen-service .section_title{
+            margin: 0 10px 10px;
+        }
+        #citizen-service .project-title {
+            max-width: 124px;
+        }
+        #citizen-service .right-column{
+            padding: 5px; 
+            margin-left: auto; 
+            margin-right: auto;}
+        #citizen-service .project-details-grid, #citizen-service .side-right, #citizen-service .side-left{
+            grid-template-columns: 114px 1fr; 
+        }
+        #citizen-service .info-grid{display: block;}
+        #citizen-service .info-item{margin-bottom: 5px; padding-bottom: 10px;}
+        #citizen-service .info-label{white-space: nowrap; padding: 0; margin: 0;}
+        #citizen-service .info-value{white-space: wrap;}
+        #citizen-service .project-name span{padding-top: 10px;}
+        #citizen-service .project-name{margin-bottom: 0;}
+        #citizen-service .inner-circle{width: 65.5px; height: 65.5px;}
+        #citizen-service .circular-progress{width: 88px; height: 88px;}
+        #citizen-service .project-details-flex{
+            display: block;
+            align-items: flex-start;
+        }
+        #citizen-service .side-right, #citizen-service .side-left{margin-bottom: 10px; min-height: 193px;}
+        #citizen-service .left-column .accordion-title{
+            font-size: 14px;
+        }
+        #citizen-service .side-right p, #citizen-service .side-left p, 
+        #citizen-service .side-right span, #citizen-service .side-left span{
+            font-size: 14px;
+        }
+        #citizen-service .side-right p, #citizen-service .side-left p{margin-top: 0;}
+        #citizen-service .grid-tilte{margin-bottom: 0px;}
     }
 </style>
 <body>
+    <div id="citizen-service">
 
     <header class="card-header">
         <div class="right-side-header">
@@ -184,10 +268,10 @@
                     <div class="accordion-content">
                         <div class="accordion-content open" style="max-height: 500px;"> 
                             <div class="project-details-grid">
-                                <div class="grid-column right-column">
+                                <div class="right-column">
                                     <h4 class="project-title">مشروع مطروح</h4>
                                 </div>
-                                <div class="grid-column left-column">
+                                <div class="left-column">
                                     <p class="project-name">تسريع هندسة اجراءات الرخص السريعة<span>(مشروع داخلي)</span></p>
 
                                     <div class="info-grid">
@@ -256,7 +340,7 @@
                             <div class="project-details-flex">
 
                                 <div class="side-right">
-                                    <div class="grid-column right-column">
+                                    <div class="right-column">
                                         <div class="circular-progress">
                                             <div class="inner-circle">50%</div>
                                         </div>
@@ -285,9 +369,9 @@
                                         );
                                     </script>
                                     
-                                    <div class="grid-column left-column">
+                                    <div class="left-column">
                                         <div class="info-grid">
-                                            <div style="margin-bottom: 30px;">
+                                            <div class="grid-tilte" style="margin-bottom: clamp(10px, 2vw, 30px);">
                                                 <p style="white-space: nowrap; margin-bottom: 3px;">وضع سياسة تواصل وسائل التواصل الاجتماعي</p>
                                                 <span class="subtitle">(مشروع داخلي)</span>
                                             </div>
@@ -315,12 +399,12 @@
                                 </div>
 
                                 <div class="side-left">
-                                    <div class="grid-column right-column">
-                                        <h4 class="project-title">مشروع مخطط له </h4>
+                                    <div class="right-column">
+                                        <h4 class="project-title" style="font-size: 14px;">مشروع مخطط له </h4>
                                     </div>
-                                    <div class="grid-column left-column">
+                                    <div class="left-column">
                                         <div class="info-grid">
-                                            <div style="margin-bottom: 30px;">
+                                            <div class="grid-tilte" style="margin-bottom: clamp(10px, 2vw, 30px);">
                                                 <p style="white-space: nowrap; margin-bottom: 3px;">وضع سياسة تواصل وسائل التواصل الاجتماعي</p>
                                                 <span class="subtitle">(مشروع داخلي)</span>
                                             </div>
@@ -458,5 +542,6 @@
             });
         </script>
     </section>
+    </div>
 </body>
 </html>

@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="assets/style.css">
     <title>بطاقة مشروع</title>
     <style>
-        .circular-progress {
+        #project-card .circular-progress {
             position: relative;
             border-radius: 50%;
             background: conic-gradient(
@@ -17,7 +16,7 @@
             width: 133px;
             height: 133px; 
         }
-        .inner-circle {
+        #project-card .inner-circle {
             top: 50%;
             left: 50%;
             width: 96px;
@@ -33,7 +32,7 @@
             transform: translate(-50%, -50%);
             background-color: var(--background); 
         }
-        .section1 {
+        #project-card .section1 {
             gap: 10px;
             width: auto;
             height: auto;
@@ -42,7 +41,8 @@
             font-weight: 700; 
             min-height: 155px;
         } 
-        .card_1, .card_2, .card_3, .card_4, .card_5 {
+        #project-card .card_1, #project-card .card_2, #project-card .card_3, 
+        #project-card .card_4, #project-card .card_5 {
             width: auto; 
             min-width: 50%;
             min-width: 100px;
@@ -56,29 +56,29 @@
             max-width: calc(100% / 5 - 8px); 
             background-color: var(--background);
         }
-        .card_5 {
+        #project-card .card_5 {
             align-items: center;
             justify-content: center;
         }
         @media (max-width: 768px) {
-            .card{
+            #project-card .card{
                 margin: 0;
             }
-            .card_1, .card_2, .card_3, 
-            .card_7, .card_8, .card_9 {
+            #project-card .card_1, #project-card .card_2, #project-card .card_3, 
+            #project-card .card_7, #project-card .card_8, #project-card .card_9 {
                 flex: 1 1 calc((100% / 3) - 7px);
                 max-width: calc((100% / 3) - 7px);
             }  
-            .card_10, .card_11 {
+            #project-card .card_10, #project-card .card_11 {
                 min-width: 150px;
                 min-height: 116px;
                 box-sizing: border-box;  
                 flex: 1 1 calc(50% - 5px);
                 max-width: calc(50% - 5px);   
             }
-            .card_12, .card_13, .card_14, .card_16,
-            .card_17, .card_18, .card_19, .card_20, 
-            .card_21, .card_22, .card_23{
+            #project-card .card_12, #project-card .card_13, #project-card .card_14, #project-card .card_16,
+            #project-card .card_17, #project-card .card_18, #project-card .card_19, #project-card .card_20, 
+            #project-card .card_21, #project-card .card_22, #project-card .card_23{
                 width: auto;                
                 display: flex; 
                 min-width: 100%;
@@ -89,55 +89,55 @@
                 box-shadow: var(--box-shadow);
                 background-color: var(--background);
             }
-            .card_4 {
+            #project-card .card_4 {
                 flex: 1 1 calc((100%/3) - 5px);
                 max-width: calc((100%/3) - 5px);
             }
-            .card_5{
+            #project-card .card_5{
                 flex: 1 1 calc((100% - (100%/3)) - 5px);
                 max-width: calc((100% - (100%/3)) - 5px);
             }
-            .code {
+            #project-card .code {
                 order: 2;
                 width: 95%;
                 margin-top: 15px;
                 padding-right: 10px;
                 align-items: flex-start;
             }
-            .card-content {
+            #project-card .card-content {
                 padding-top: 30px;
                 padding-bottom: 20px;
             }
-            .card-header {
+            #project-card .card-header {
                 flex-direction: column;
                 padding: 10px 10px 0 0;
                 align-items: flex-start;
             }
-            .top-section-content{
+            #project-card .top-section-content{
                 padding: 10px;
                 padding-bottom: 0;
             }
-            .top-section-title{
+            #project-card .top-section-title{
                 font-size: 12px;
                 padding-right: 0;
             }
-            .inner-circle{
+            #project-card .inner-circle{
                 width: 57px;
                 height: 57px;
                 font-size: 16px;
             }
-            .circular-progress{
+            #project-card .circular-progress{
                 width: 80px;
                 height: 80px;
             }
-            .card_18 .section-content li, .card_19 .section-content li {
+            #project-card .card_18 .section-content li, #project-card .card_19 .section-content li {
                 flex: 1 1 100%; 
                 max-width: 100%; 
                 position: relative; 
                 margin-bottom: 10px; 
                 padding-right: 15px; 
             }
-            .card_17 .section-content li{
+            #project-card .card_17 .section-content li{
                 flex: 1 1 100%; 
                 max-width: 100%; 
                 position: relative; 
@@ -147,7 +147,7 @@
     </style>
 </head>
 <body>
-  <div class="card">
+  <div id="project-card" class="card">
     <div class="card-header">
         <div>
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" fill="none">

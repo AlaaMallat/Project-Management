@@ -4,11 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>النواة الاستراتيجية</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
+<style>
+    @media (max-width: 768px) {
+        #strategic-nuclei .core-values-grid {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            margin-left: 10px;
+        }
+        #strategic-nuclei .value-card{
+            width: 306px; 
+            height: 241px;
+        }
+        #strategic-nuclei .value-card p,
+        #strategic-nuclei .value-card span,
+        #strategic-nuclei .value-card h3 {
+        white-space: normal; /* allow line breaks */
+        display: block;      /* make sure text flows vertically */
+        }
+        #strategic-nuclei .framework-header{
+            margin-bottom: 5px; 
+            height: 81px;
+        }
+        #strategic-nuclei .second-line{padding: 10px;}
+        #strategic-nuclei .header-title{padding-right: 15px;}
+        #strategic-nuclei .list{margin-right: 10px;}
+        #strategic-nuclei .mission-card{padding: 5px;}
+        #strategic-nuclei .mission-list{margin-right: 0px;}
+
+        #strategic-nuclei .vision-card, 
+        #strategic-nuclei .mission-card, 
+        #strategic-nuclei .list{padding-right: 0px;}
+
+        #strategic-nuclei .mission-list {
+            width: auto;
+            display: flex;
+            height: 300px;
+            flex-wrap: wrap;
+            list-style: none; 
+            margin-right: 0;
+            padding: 0;
+            flex-direction: column;
+            align-content: flex-start;
+            counter-reset: mission-counter;
+        }
+        #strategic-nuclei .mission-list li {
+            gap: 3px; 
+            display: grid;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            counter-increment: mission-counter;
+            grid-template-columns: 40px 180px 5px;
+        }
+        #strategic-nuclei .mission-list li::before {
+            margin: 5px;
+        }
+        #strategic-nuclei .arrow-icon{width: 20px; height: 20px; padding-top: 5px;}
+        #strategic-nuclei .section-heading{margin-right: 0px; padding-right: 0px;}
+        #strategic-nuclei .vision-text{margin: 0px;}
+    }
+</style>
 <body>
-    <div class="framework-container">
+    <div id="strategic-nuclei" class="framework-container">
         <header class="framework-header">
             <h1 class="header-title">النواة الاستراتيجية</h1>
         </header>
