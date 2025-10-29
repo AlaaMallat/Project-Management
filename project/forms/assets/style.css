@@ -869,6 +869,7 @@ body {
     padding: 20px;
     align-self: flex-start; 
 }
+#strategic-nuclei .list{padding-bottom: 30px;}
 #strategic-nuclei .card-header {
     gap: 10px;
     display: flex;
@@ -939,13 +940,12 @@ body {
 #strategic-nuclei .accordion-content {
     max-height: 0;
     padding-top: 0; 
-    overflow: hidden;
-    margin-top: 10px;
-    margin-right: 30px;
-    transition: max-height 0.3s ease-out;
+    display: none;
+    margin: 30px 40px 20px;
+    transition: max-height 0.3s ease-in;
 }
-#strategic-nuclei .list.open .accordion-content {
-    max-height: 500px;
+#strategic-nuclei .accordion-content.active {
+    display: block;
 }
 #strategic-nuclei .arrow-icon {
     cursor: pointer;
@@ -961,51 +961,57 @@ body {
 }
 #strategic-nuclei .row {
   display: grid;
-  border-bottom: 1px solid #ddd;
-  grid-template-columns: 150px 1fr;
+  align-items: start;
+  border-bottom: 1px solid #F0F0F0;
+  grid-template-columns: 150px 210px 1fr; 
 }
 #strategic-nuclei .row:last-child {
   border-bottom: none;
 }
 #strategic-nuclei .category {
-  padding: 15px;
-  font-size: 24px;
   color: #76A488;
   font-weight: bold;
   align-self: start;
+  align-self: start;
+  padding: 40px 20px;
+  grid-row: 1 / span 2; 
+  font-size: clamp(14px, 2vw, 24px);
 }
 #strategic-nuclei .group {
-  display: flex;
-  align-items: flex-start;
+  display: contents;   
+  border-bottom: 1px solid #F0F0F0; 
 }
-#strategic-nuclei .title {
+#strategic-nuclei .group .title {
   height: 100%;
-  padding: 15px;
-  font-size: 20px;
-  font-weight: 600;
+  display: flex;
+  grid-column: 2; 
   color: #00447D;
   white-space: wrap;
-  margin-bottom: 5px;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #F0F0F0; 
+  border-right: 1px solid #F0F0F0; 
 }
-#strategic-nuclei ul {
+#strategic-nuclei .group-footer {
+  grid-column: 2 / 4; 
+  border-top: 1px solid #F0F0F0;
+}
+#strategic-nuclei .group ul {
   margin: 0;
-  gap: 15px;
-  display: grid;
-  font-size: 16px;
-  list-style: none;
-  padding-right: 15px;
-  background: var(--background);
-  grid-template-columns: 210px 1fr; 
+  padding: 20px;
+  grid-column: 3; 
+  column-count: 2;      
+  column-gap: 20px;
+  line-height: 45px;
+  margin-right: 20px;
 }
 #strategic-nuclei ul li {
   position: relative;
+  margin-bottom: 20px;
 }
 #strategic-nuclei ul li::before {
   right: -10px;
-  content: "•";
-  color: #777;
   position: absolute;
 }
 

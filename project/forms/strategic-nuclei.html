@@ -69,16 +69,54 @@
         #strategic-nuclei .arrow-icon{width: 20px; height: 20px; padding-top: 5px;}
         #strategic-nuclei .section-heading{margin-right: 0px; padding-right: 0px;}
         #strategic-nuclei .vision-text{margin: 0px;}
+        #strategic-nuclei .accordion-content {
+            margin: 30px 0px 20px;
+        }
+        #strategic-nuclei .row {
+            display: grid;
+            overflow: wrap;    
+            align-items: start;
+            border-radius: 20px;            
+            margin-bottom: 15px;             
+            align-items: stretch;
+            background-color: var(--background);     
+            grid-template-columns: 80px 150px 1fr; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        }
+        #strategic-nuclei .strategy-table {
+            background: transparent;
+        }
+        #strategic-nuclei .category {
+            display: flex;
+            padding-right: 0;
+            grid-row: 1 / -1;
+            padding: 20px 10px;
+            text-align: center;
+            align-items: center;       
+            align-items: center;
+            justify-content: center;  
+            justify-content: center;
+        }
+        #strategic-nuclei .group ul {
+            column-count: 1;      
+            line-height: 25px;
+        }
+        #strategic-nuclei ul li {
+            font-size: 12px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
     }
-      @media (max-width: 450px) {
+    @media (max-width: 450px) {
         #strategic-nuclei .mission-list {
+            height: auto;
             display: block;
             font-size: 15px;
+            white-space: wrap;
             margin-bottom: 20px;
-            height: auto;
-             white-space: wrap;
         }
-}
+    }
 </style>
 <body>
     <div id="strategic-nuclei" class="framework-container">
@@ -280,20 +318,18 @@
             <div class="accordion-content"> 
                 <div class="strategy-table">
                     <div class="row">
-                    <div class="category">الأثر</div>
-                    <div class="group">
-                        <div class="title">خدمة المواطن</div>
-                        <ul>
+                        <div class="category">الأثر</div>
+                        <div class="group">
+                            <div class="title">خدمة المواطن</div>
+                            <ul>
                             <li>معاملات سريعة وسلسة</li>
                             <li>خدمات استباقية ومتكاملة</li>
                             <li>تعزيز الصورة المؤسسية</li>
                             <li>تعزيز المواطنة والانتماء</li>
-                        </ul>
-                    </div>
-                    </div>
+                            </ul>
+                            <div class="group-footer"></div>
+                        </div>
 
-                    <div class="row">
-                        <div class="category">العمليات</div>
                         <div class="group">
                             <div class="title">جودة الحياة</div>
                             <ul>
@@ -302,25 +338,34 @@
                                 <li>حركة سير منظمة</li>
                                 <li>منظومة مستدامة للصحة والبيئة والغذاء</li>
                             </ul>
-                        </div>
+                            <div class="group-footer"></div>
+                        </div>                    
+                    </div>
+
+                    <div class="row">
+                        <div class="category">العمليات</div>
+                        
                         <div class="group">
-                            <div class="title">مدينة عالمية بتراثها وحداثتها</div>
+                            <div class="title">مدينة عالمية بتراثها وجمالها</div>
                             <ul>
                                 <li>مدينة خضراء منظمة</li>
                                 <li>الحفاظ على هوية المدينة التاريخية وتعزيز موقعها السياحي</li>
                             </ul>
+                            <div class="group-footer"></div>
                         </div>
                         <div class="group">
                             <div class="title">مدينة مبتكرة ومبدعة</div>
                             <ul>
                                 <li>منظومة الثقافة والتعليم</li>
                             </ul>
+                            <div class="group-footer"></div>
                         </div>
                         <div class="group">
                             <div class="title">الشراكة بين القطاع العام والخاص</div>
                             <ul>
                                 <li>شراكات فاعلة تحقق النمو الاقتصادي مع القطاع الخاص</li>
                             </ul>
+                            <div class="group-footer"></div>
                         </div>
                     </div>
 
@@ -333,12 +378,14 @@
                             <li>عمل إداري شفاف</li>
                             <li>إجراءات سهلة وسريعة</li>
                         </ul>
+                        <div class="group-footer"></div>
                     </div>
                     <div class="group">
-                        <div class="title">موارد بشرية ومصرفية مستدامة</div>
+                        <div class="title">موارد بشرية ومعرفية مستدامة</div>
                         <ul>
                             <li>تعزيز قدرات الجهاز البلدي</li>
                         </ul>
+                        <div class="group-footer"></div>
                     </div>
                     <div class="group">
                         <div class="title">الشراكات المؤسسية</div>
@@ -347,6 +394,7 @@
                             <li>التنظيم والتعاون مع المجتمع الأهلي</li>
                             <li>التعاون مع المؤسسات الخاصة والهيئات حكومية</li>
                         </ul>
+                        <div class="group-footer"></div>
                     </div>
                     </div>
 
@@ -365,21 +413,25 @@
         </div>
         <script>
             const accordionHeaders = document.querySelectorAll('.content');
-                accordionHeaders.forEach(header => {
-                    header.addEventListener('click', function() {
-                        const item = this.closest('.list');
-                        item.classList.toggle('open');
-                        if (item.classList.contains('open')) {
-                            setTimeout(() => {
-                                item.scrollIntoView({
-                                    behavior: 'smooth', 
-                                    block: 'start'  
-                                });
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const item = this.closest('.list');
+                    const content = item.querySelector('.accordion-content');
 
-                            }, 450); 
-                        }
-                    });
-                });  
+                    item.classList.toggle('open');
+                    content.classList.toggle('active'); // 👈 this line shows/hides the content
+
+                    if (item.classList.contains('open')) {
+                        setTimeout(() => {
+                            item.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 450);
+                    }
+                });
+            });
+
         </script>
     </div>
 </body>
