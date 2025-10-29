@@ -8,20 +8,21 @@
 </head>
 <style>
     #citizen-service .circular-progress {
+        width: 150px;
+        height: 150px; 
         position: relative;
         border-radius: 50%;
         background: conic-gradient(
             var(--progress-brown) 180deg, 
             #e0e0e0 0deg      
         );
-        width: 150px;
-        height: 150px; 
     }
     #citizen-service .inner-circle {
         top: 50%;
         left: 50%;
+        width: 110px;
+        height: 110px;
         display: flex;
-        font-size: clamp(16px, 3vw, 32px);
         font-weight: 600;
         color: #AF8E32;
         text-align: right;
@@ -31,9 +32,8 @@
         line-height: normal;
         align-items: center;
         justify-content: center;
-        width: 110px;
         transform: translate(-50%, -50%);
-        height: 110px;
+        font-size: clamp(16px, 3vw, 32px);
         background-color: var(--background); 
     }
     @media (max-width: 768px) {
@@ -62,9 +62,9 @@
         #citizen-service .card_7, #citizen-service .card_8, #citizen-service .card_9 {
             margin: 0;
             width: auto;                
-            padding: 5px 10px;
             min-width: 50%;
-            min-width: 10px;       
+            min-width: 10px;  
+            padding: 5px 10px;
             border-radius: 50px;
             display: inline-flex;         
             box-sizing: border-box;
@@ -93,32 +93,55 @@
         #citizen-service .right-column{
             padding: 5px; 
             margin-left: auto; 
-            margin-right: auto;}
-        #citizen-service .project-details-grid, #citizen-service .side-right, #citizen-service .side-left{
+            margin-right: auto;
+        }
+        #citizen-service .project-details-grid, 
+        #citizen-service .side-right, 
+        #citizen-service .side-left{
             grid-template-columns: 114px 1fr; 
         }
-        #citizen-service .info-grid{display: block;}
-        #citizen-service .info-item{margin-bottom: 5px; padding-bottom: 10px;}
-        #citizen-service .info-label{white-space: nowrap; padding: 0; margin: 0;}
-        #citizen-service .info-value{white-space: wrap;}
-        #citizen-service .project-name span{padding-top: 10px;}
-        #citizen-service .project-name{margin-bottom: 0;}
-        #citizen-service .inner-circle{width: 65.5px; height: 65.5px;}
-        #citizen-service .circular-progress{width: 88px; height: 88px;}
         #citizen-service .project-details-flex{
             display: block;
             align-items: flex-start;
         }
-        #citizen-service .side-right, #citizen-service .side-left{margin-bottom: 10px; min-height: 193px;}
+        #citizen-service .side-right, 
+        #citizen-service .side-left{
+            min-height: 193px;
+            margin-bottom: 10px; 
+        }
         #citizen-service .left-column .accordion-title{
             font-size: 14px;
         }
-        #citizen-service .side-right p, #citizen-service .side-left p, 
-        #citizen-service .side-right span, #citizen-service .side-left span{
+        #citizen-service .side-right p, 
+        #citizen-service .side-left p, 
+        #citizen-service .side-right span, 
+        #citizen-service .side-left span{
             font-size: 14px;
         }
-        #citizen-service .side-right p, #citizen-service .side-left p{margin-top: 0;}
+        #citizen-service .info-item{
+            margin-bottom: 5px; 
+            padding-bottom: 10px;
+        }
+        #citizen-service .info-label{
+            white-space: nowrap; 
+            padding: 0; 
+            margin: 0;
+        }
+        #citizen-service .inner-circle{
+            width: 65.5px; 
+            height: 65.5px;
+        }
+        #citizen-service .circular-progress{
+            width: 88px; 
+            height: 88px;
+        }
+        #citizen-service .side-right p, 
+        #citizen-service .side-left p{margin-top: 0;}
+        #citizen-service .info-grid{display: block;}
+        #citizen-service .info-value{white-space: wrap;}
+        #citizen-service .project-name{margin-bottom: 0;}
         #citizen-service .grid-tilte{margin-bottom: 0px;}
+        #citizen-service .project-name span{padding-top: 10px;}
     }
 </style>
 <body>
@@ -400,7 +423,7 @@
 
                                 <div class="side-left">
                                     <div class="right-column">
-                                        <h4 class="project-title" style="font-size: 14px;">مشروع مخطط له </h4>
+                                        <h4 class="project-title" style="font-size: clamp(14px, 2vw, 20px); white-space: wrap;">مشروع مخطط له </h4>
                                     </div>
                                     <div class="left-column">
                                         <div class="info-grid">

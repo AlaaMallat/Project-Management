@@ -23,10 +23,11 @@
         #strategic-nuclei .value-card p,
         #strategic-nuclei .value-card span,
         #strategic-nuclei .value-card h3 {
-        white-space: normal; /* allow line breaks */
-        display: block;      /* make sure text flows vertically */
+        white-space: normal; 
+        display: block;      
         }
         #strategic-nuclei .framework-header{
+            width: 100%;
             margin-bottom: 5px; 
             height: 81px;
         }
@@ -43,6 +44,7 @@
         #strategic-nuclei .mission-list {
             width: auto;
             display: flex;
+            white-space: wrap;
             height: 300px;
             flex-wrap: wrap;
             list-style: none; 
@@ -68,6 +70,15 @@
         #strategic-nuclei .section-heading{margin-right: 0px; padding-right: 0px;}
         #strategic-nuclei .vision-text{margin: 0px;}
     }
+      @media (max-width: 450px) {
+        #strategic-nuclei .mission-list {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 20px;
+            height: auto;
+             white-space: wrap;
+        }
+}
 </style>
 <body>
     <div id="strategic-nuclei" class="framework-container">
@@ -266,7 +277,91 @@
                 </svg>
                 <div class="list-title">خطة بلدية طرابلس لسنة 2026</div>
             </div>
-            <div class="accordion-content"> </div>
+            <div class="accordion-content"> 
+                <div class="strategy-table">
+                    <div class="row">
+                    <div class="category">الأثر</div>
+                    <div class="group">
+                        <div class="title">خدمة المواطن</div>
+                        <ul>
+                            <li>معاملات سريعة وسلسة</li>
+                            <li>خدمات استباقية ومتكاملة</li>
+                            <li>تعزيز الصورة المؤسسية</li>
+                            <li>تعزيز المواطنة والانتماء</li>
+                        </ul>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="category">العمليات</div>
+                        <div class="group">
+                            <div class="title">جودة الحياة</div>
+                            <ul>
+                                <li>نغبة ترفيهية تواكب الحياة</li>
+                                <li>بيئة نخبة صحية</li>
+                                <li>حركة سير منظمة</li>
+                                <li>منظومة مستدامة للصحة والبيئة والغذاء</li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="title">مدينة عالمية بتراثها وحداثتها</div>
+                            <ul>
+                                <li>مدينة خضراء منظمة</li>
+                                <li>الحفاظ على هوية المدينة التاريخية وتعزيز موقعها السياحي</li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="title">مدينة مبتكرة ومبدعة</div>
+                            <ul>
+                                <li>منظومة الثقافة والتعليم</li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="title">الشراكة بين القطاع العام والخاص</div>
+                            <ul>
+                                <li>شراكات فاعلة تحقق النمو الاقتصادي مع القطاع الخاص</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="category">الممكنات</div>
+                    <div class="group">
+                        <div class="title">تحول إداري ورقمي</div>
+                        <ul>
+                            <li>امتثال وحوكمة قوية</li>
+                            <li>عمل إداري شفاف</li>
+                            <li>إجراءات سهلة وسريعة</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <div class="title">موارد بشرية ومصرفية مستدامة</div>
+                        <ul>
+                            <li>تعزيز قدرات الجهاز البلدي</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <div class="title">الشراكات المؤسسية</div>
+                        <ul>
+                            <li>التكامل والتنسيق المؤسسي مع الجهات الحكومية</li>
+                            <li>التنظيم والتعاون مع المجتمع الأهلي</li>
+                            <li>التعاون مع المؤسسات الخاصة والهيئات حكومية</li>
+                        </ul>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="category">التمويل</div>
+                    <div class="group">
+                        <div class="title">موارد مالية مستدامة</div>
+                        <ul>
+                            <li>استقطاب الإيرادات الذاتية</li>
+                            <li>استقطاب الهبات والدعم</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script>
             const accordionHeaders = document.querySelectorAll('.content');
