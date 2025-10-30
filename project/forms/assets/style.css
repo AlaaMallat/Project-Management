@@ -665,8 +665,7 @@ body {
 }
 #project-card .card_21, #project-card .card_22, #project-card .card_23 {
   width: auto; 
-  min-width: 10px;       
-  min-width: 592px;
+  min-width: 100px;
   padding: 10px 15px;
   border-radius: 20px;
   display: inline-flex;         
@@ -798,6 +797,7 @@ body {
     gap: 10px; 
     display: flex;
 }
+#strategic-nuclei .content{margin-bottom: 25px;}
 #strategic-nuclei .first-line {
     gap: 10px;
     padding: 10px;
@@ -933,9 +933,8 @@ body {
     font-size: clamp(14px, 3vw, 24px);
 }
 #strategic-nuclei .accordion-content {
-    max-height: 0;
-    padding-top: 0; 
     display: none;
+    padding-top: 0; 
     margin: 30px 40px 20px;
     transition: max-height 0.3s ease-in;
 }
@@ -954,14 +953,11 @@ body {
   border-radius: 20px;
   background: var(--background);
 }
-#strategic-nuclei .row {
+#strategic-nuclei [class^="row_"] {
   display: grid;
   align-items: start;
   border-bottom: 1px solid #F0F0F0;
   grid-template-columns: 150px 210px 1fr; 
-}
-#strategic-nuclei .row:last-child {
-  border-bottom: none;
 }
 #strategic-nuclei .category {
   color: #76A488;
@@ -1070,11 +1066,12 @@ body {
 @media (max-width: 768px) {
   #strategic_goals_card .code {
     order: 2;
-    width: 95%;
-    margin-top: 15px;
+    width: 50%;
+    margin-right: 0;
+    margin-top: 20px;
     text-align: right; 
     align-items: right;
-    padding-right: 28px;
+    padding-right: 25px;
   }
   #strategic_goals_card .card-content {
     padding-top: 30px;
@@ -1085,6 +1082,7 @@ body {
     padding: 10px 10px 0 0;
     align-items: flex-start;
   }
+
   #performance-indicator .code {
     order: 2;
     width: 95%;
@@ -1102,6 +1100,7 @@ body {
     padding: 10px 10px 0 0;
     align-items: flex-start;
   }
+
   #initiative-card .right-side-header {
     order: 1;
     width: 100%;

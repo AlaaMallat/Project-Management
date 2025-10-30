@@ -10,8 +10,12 @@
     #citizen-service .circular-progress {
         width: 150px;
         height: 150px; 
+        display: flex;
         position: relative;
         border-radius: 50%;
+        align-items: center; 
+        flex-direction: column; 
+        justify-content: center;
         background: conic-gradient(
             var(--progress-brown) 180deg, 
             #e0e0e0 0deg      
@@ -35,6 +39,12 @@
         transform: translate(-50%, -50%);
         font-size: clamp(16px, 3vw, 32px);
         background-color: var(--background); 
+    }
+    #citizen-service .right-column p {
+        margin-top: 10px; 
+        color: #AF8E32;
+        text-align: center;
+        font-size: clamp(14px, 2vw, 20px);
     }
     @media (max-width: 768px) {
         #citizen-service .search-container{
@@ -365,6 +375,7 @@
                                         <div class="circular-progress">
                                             <div class="inner-circle">50%</div>
                                         </div>
+                                        <p></p>
                                     </div>
 
                                     <script>
